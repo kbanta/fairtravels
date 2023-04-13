@@ -1,47 +1,30 @@
 @extends('layouts.app')
 @section('content')
+
 <!-- Preloader -->
 <div id="preloader">
     <div class="dorne-load"></div>
 </div>
-
-<!-- ***** Search Form Area ***** -->
-<div class="dorne-search-form d-flex align-items-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="search-close-btn" id="closeBtn">
-                    <i class="pe-7s-close-circle" aria-hidden="true"></i>
-                </div>
-                <form action="#" method="get">
-                    <input type="search" name="caviarSearch" id="search" placeholder="Search Your Desire Destinations or Events">
-                    <input type="submit" class="d-none" value="submit">
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- ***** Header Area Start ***** -->
 @include('layouts.navbar')
 <!-- ***** Header Area End ***** -->
 
 <!-- ***** Welcome Area Start ***** -->
-<section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(temp/img/bg-img/hero-1.jpg);">
+
+<section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url('<?php echo asset('temp/img/bg-img/hero-1.jpg'); ?>')">
     <div class="container h-100">
         <div class="row h-100 align-items-center justify-content-center">
-            <div class="col-12 col-md-10">
+            <div class="col-12 col-md-12">
                 <div class="hero-content">
                     <h2>Let us take you there</h2>
                     <h4>Discover your next adventure with us</h4>
                 </div>
-                <!-- Hero Search Form -->
                 @include('landing_page.search_flight')
             </div>
         </div>
     </div>
     <!-- Hero Social Btn -->
-    <div class="hero-social-btn">
+    <!-- <div class="hero-social-btn">
         <div class="social-title d-flex align-items-center">
             <h6>Follow us on Social Media</h6>
             <span></span>
@@ -53,18 +36,21 @@
             <a href="#"><i class="fa fa-twitter" aria-haspopup="true"></i></a>
             <a href="#"><i class="fa fa-facebook" aria-haspopup="true"></i></a>
         </div>
-    </div>
+    </div> -->
 </section>
+<!-- <section>
+    <div id="search-results">
+    </div>
+</section> -->
 <!-- ***** Welcome Area End ***** -->
 
 <!-- ***** Catagory Area Start ***** -->
-<section class="dorne-catagory-area">
+<!-- <section class="">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="all-catagories">
                     <div class="row">
-                        <!-- Single Catagory Area -->
                         <div class="col-12 col-sm-6 col-md">
                             <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.2s">
                                 <div class="catagory-content">
@@ -75,7 +61,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Single Catagory Area -->
                         <div class="col-12 col-sm-6 col-md">
                             <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.4s">
                                 <div class="catagory-content">
@@ -86,7 +71,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Single Catagory Area -->
                         <div class="col-12 col-sm-6 col-md">
                             <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.6s">
                                 <div class="catagory-content">
@@ -97,7 +81,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Single Catagory Area -->
                         <div class="col-12 col-sm-6 col-md">
                             <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.8s">
                                 <div class="catagory-content">
@@ -108,7 +91,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Single Catagory Area -->
                         <div class="col-12 col-md">
                             <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="1s">
                                 <div class="catagory-content">
@@ -124,7 +106,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- ***** Catagory Area End ***** -->
 
 <!-- ***** About Area Start ***** -->
@@ -132,9 +114,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="about-content text-center">
-                    <h2>Discover your city with <br><span>Dorne</span></h2>
-                    <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce quis tempus elit. Sed efficitur tortor neque, vitae aliquet urna varius sit amet. Ut rhoncus, nunc nec tincidunt volutpat, ex libero.</p>
+                <div class="about-content text-center" id="search-results">
                 </div>
             </div>
         </div>
@@ -143,7 +123,7 @@
 <!-- ***** About Area End ***** -->
 
 <!-- ***** Editor Pick Area Start ***** -->
-<section class="dorne-editors-pick-area bg-img bg-overlay-9 section-padding-100" style="background-image: url(img/bg-img/hero-2.jpg);">
+<!-- <section class="dorne-editors-pick-area bg-img bg-overlay-9 section-padding-100" style="background-image: url(img/bg-img/hero-2.jpg);">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -198,11 +178,11 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- ***** Editor Pick Area End ***** -->
 
 <!-- ***** Features Destinations Area Start ***** -->
-<section class="dorne-features-destinations-area">
+<!-- <section class="dorne-features-destinations-area">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
@@ -217,10 +197,10 @@
         <div class="row">
             <div class="col-12">
                 <div class="features-slides owl-carousel">
-                    <!-- Single Features Area -->
+                    
                     <div class="single-features-area">
                         <img src="{{asset('temp/img/bg-img/feature-1.jpg')}}" alt="">
-                        <!-- Price -->
+                        
                         <div class="price-start">
                             <p>FROM $59/night</p>
                         </div>
@@ -234,10 +214,10 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Single Features Area -->
+                    
                     <div class="single-features-area">
                         <img src="{{asset('temp/img/bg-img/feature-2.jpg')}}" alt="">
-                        <!-- Price -->
+                        
                         <div class="price-start">
                             <p>FROM $59/night</p>
                         </div>
@@ -251,10 +231,10 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Single Features Area -->
+                    
                     <div class="single-features-area">
                         <img src="{{asset('temp/img/bg-img/feature-3.jpg')}}" alt="">
-                        <!-- Price -->
+                        
                         <div class="price-start">
                             <p>FROM $59/night</p>
                         </div>
@@ -268,10 +248,10 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Single Features Area -->
+                    
                     <div class="single-features-area">
                         <img src="{{asset('temp/img/bg-img/feature-4.jpg')}}" alt="">
-                        <!-- Price -->
+                        
                         <div class="price-start">
                             <p>FROM $59/night</p>
                         </div>
@@ -285,10 +265,10 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Single Features Area -->
+                    
                     <div class="single-features-area">
                         <img src="{{asset('temp/img/bg-img/feature-5.jpg')}}" alt="">
-                        <!-- Price -->
+                        
                         <div class="price-start">
                             <p>FROM $59/night</p>
                         </div>
@@ -306,11 +286,11 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- ***** Features Destinations Area End ***** -->
 
 <!-- ***** Features Restaurant Area Start ***** -->
-<section class="dorne-features-restaurant-area bg-default">
+<!-- <section class="dorne-features-restaurant-area bg-default">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
@@ -325,10 +305,10 @@
         <div class="row">
             <div class="col-12">
                 <div class="features-slides owl-carousel">
-                    <!-- Single Features Area -->
+                    
                     <div class="single-features-area">
                         <img src="{{asset('temp/img/bg-img/feature-6.jpg')}}" alt="">
-                        <!-- Rating & Map Area -->
+                        
                         <div class="ratings-map-area d-flex">
                             <a href="#">8.5</a>
                             <a href="#"><img src="{{asset('temp/img/core-img/map.png')}}" alt=""></a>
@@ -343,10 +323,10 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Single Features Area -->
+                    
                     <div class="single-features-area">
                         <img src="{{asset('temp/img/bg-img/feature-7.jpg')}}" alt="">
-                        <!-- Rating & Map Area -->
+                        
                         <div class="ratings-map-area d-flex">
                             <a href="#">9.5</a>
                             <a href="#"><img src="{{asset('temp/img/core-img/map.png')}}" alt=""></a>
@@ -361,10 +341,10 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Single Features Area -->
+                    
                     <div class="single-features-area">
                         <img src="{{asset('temp/img/bg-img/feature-8.jpg')}}" alt="">
-                        <!-- Rating & Map Area -->
+                        
                         <div class="ratings-map-area d-flex">
                             <a href="#">8.2</a>
                             <a href="#"><img src="{{asset('temp/img/core-img/map.png')}}" alt=""></a>
@@ -379,10 +359,10 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Single Features Area -->
+                    
                     <div class="single-features-area">
                         <img src="{{asset('temp/img/bg-img/feature-9.jpg')}}" alt="">
-                        <!-- Rating & Map Area -->
+                        
                         <div class="ratings-map-area d-flex">
                             <a href="#">8.7</a>
                             <a href="#"><img src="{{asset('temp/img/core-img/map.png')}}" alt=""></a>
@@ -397,10 +377,10 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Single Features Area -->
+                    
                     <div class="single-features-area">
                         <img src="{{asset('temp/img/bg-img/feature-10.jpg')}}" alt="">
-                        <!-- Rating & Map Area -->
+                        
                         <div class="ratings-map-area d-flex">
                             <a href="#">9.8</a>
                             <a href="#"><img src="{{asset('temp/img/core-img/map.png')}}" alt=""></a>
@@ -419,11 +399,11 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- ***** Features Restaurant Area End ***** -->
 
 <!-- ***** Features Events Area Start ***** -->
-<section class="dorne-features-events-area bg-img bg-overlay-9 section-padding-100-50" style="background-image: url(img/bg-img/hero-3.jpg)">
+<!-- <section class="dorne-features-events-area bg-img bg-overlay-9 section-padding-100-50" style="background-image: url(img/bg-img/hero-3.jpg)">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -552,11 +532,11 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- ***** Features Events Area End ***** -->
 
 <!-- ***** Clients Area Start ***** -->
-<div class="dorne-clients-area section-padding-100">
+<!-- <div class="dorne-clients-area section-padding-100">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
@@ -570,10 +550,11 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- ***** Clients Area End ***** -->
 
 <!-- ****** Footer Area Start ****** -->
+
 <footer class="dorne-footer-area">
     <div class="container-fluid">
         <div class="row">
@@ -583,7 +564,8 @@
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         Copyright &copy;<script>
                             document.write(new Date().getFullYear());
-                        </script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                        </script> All rights reserved | FairTravels
+                        <!-- <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a> -->
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </p>
                 </div>

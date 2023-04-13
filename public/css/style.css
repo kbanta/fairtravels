@@ -575,15 +575,16 @@ li {
 }
 
 .hero-search-form .tab-content .tab-pane form {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    /* display: -webkit-box; */
+    /* display: -ms-flexbox; */
+    /* display: flex; */
 }
 
 .hero-search-form .tab-content .tab-pane form .custom-select {
     height: 52px;
     border-radius: 0;
-    padding: 0 80px 0 40px;
+    /* padding: 0 80px 0 40px; */
+    padding: 10px;
     color: #72728c;
     font-size: 12px;
     font-weight: 600;
@@ -1115,7 +1116,8 @@ li {
 .explore-search-form .tab-content .tab-pane form .custom-select {
     height: 52px;
     border-radius: 0;
-    padding: 0 80px 0 40px;
+    /* padding: 0 80px 0 40px; */
+    padding: 10px;
     color: #72728c;
     font-size: 12px;
     font-weight: 600;

@@ -3,7 +3,7 @@
         <div class="row h-100">
             <div class="col-12 h-100">
                 <nav class="h-100 navbar navbar-expand-lg">
-                    <a class="navbar-brand" href="{{ url('/') }}"><img src="{{asset('temp/img/core-img/ft_logo5.png')}}" alt="" width="200"></a>
+                    <a class="navbar-brand" href="{{ url('/') }}"><img src="{{asset('temp/img/core-img/ft_logo5.png')}}" alt="" width="200" height="auto"></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dorneNav" aria-controls="dorneNav" aria-expanded="false" aria-label="Toggle navigation"><span class="fa fa-bars"></span></button>
                     <!-- Nav -->
                     <div class="collapse navbar-collapse" id="dorneNav">

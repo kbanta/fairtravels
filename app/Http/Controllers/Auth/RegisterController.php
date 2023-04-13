@@ -5,9 +5,15 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Models\Role;
+use App\Notifications\RegistrationNotification;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -22,7 +28,11 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+    use RegistersUsers, Notifiable;
+    protected function registered(Request $request, $user)
+    {
+        $user->notify(new RegistrationNotification());
+    }
 
     /**
      * Where to redirect users after registration.
@@ -62,12 +72,28 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
-    protected function create(array $data)
+    public function register(Request $request)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+        $this->validator($request->all())->validate();
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
         ]);
+
+        $role = Role::where('name', 'user')->first(); // retrieve the role
+
+        $user->attachRole($role); // attach the role to the user
+
+        event(new Registered($user));
+        Auth::login($user);
+        if ($user->hasRole('administrator')) {
+            return redirect()->route('admin_ui');
+        }
+        if ($user->hasRole('user')) {
+            $user->notify(new RegistrationNotification());
+            return redirect()->route('user_ui');
+        }
     }
 }
